@@ -38,7 +38,7 @@ public class Calculator {
 	 * @return total value calculated
 	 */
 	public int getTotal() {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -46,7 +46,7 @@ public class Calculator {
 	 * @param value used in addition operation
 	 */
 	public void add(int value) {
-		
+		total += value;
 	}
 	
 	/**
@@ -54,7 +54,7 @@ public class Calculator {
 	 * @param value used in subtraction operation
 	 */
 	public void subtract(int value) {
-		
+		total -= value;
 	}
 	
 	/**
@@ -62,7 +62,7 @@ public class Calculator {
 	 * @param value used in multiplication operation
 	 */
 	public void multiply(int value) {
-		
+		total *= value;
 	}
 	
 	/**
@@ -70,7 +70,8 @@ public class Calculator {
 	 * @param value used in division operation
 	 */
 	public void divide(int value) {
-		
+		if(value == 0) total = 0;
+		else total /= value;
 	}
 	
 	/**
