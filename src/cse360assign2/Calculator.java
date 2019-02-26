@@ -21,9 +21,10 @@ package cse360assign2;
  */
 public class Calculator {
 	/*
-	 * Parameter for total.
+	 * Parameter for total integer and operation history string.
 	 */
 	private int total;
+	private String history = "0";
 	
 	/**
 	 * Constructor that initializes total to size 0.
@@ -33,8 +34,7 @@ public class Calculator {
 	}
 	
 	/**
-	 * Gets the total value from private variable and
-	 * returns it.
+	 * Gets the total value from private variable and returns it.
 	 * @return total value calculated
 	 */
 	public int getTotal() {
@@ -42,34 +42,38 @@ public class Calculator {
 	}
 	
 	/**
-	 * Adds parameter value to the total value.
+	 * Adds operation to history. Then adds parameter value to the total value. 
 	 * @param value used in addition operation
 	 */
 	public void add(int value) {
+		history += " + " + value;
 		total += value;
 	}
 	
 	/**
-	 * Subtracts parameter value from the total value.
+	 * Adds operation to history. Then subtracts parameter value from the total value.
 	 * @param value used in subtraction operation
 	 */
 	public void subtract(int value) {
+		history += " - " + value;
 		total -= value;
 	}
 	
 	/**
-	 * Multiplies parameter value by the total value.
+	 * Adds operation to history. Then multiplies parameter value by the total value.
 	 * @param value used in multiplication operation
 	 */
 	public void multiply(int value) {
+		history += " * " + value;
 		total *= value;
 	}
 	
 	/**
-	 * Divides parameter value by the total value.
+	 * Adds operation to history. Then divides parameter value by the total value.
 	 * @param value used in division operation
 	 */
 	public void divide(int value) {
+		history += " / " + value;
 		if(value == 0) total = 0;
 		else total /= value;
 	}
@@ -79,6 +83,7 @@ public class Calculator {
 	 * @return all previous operations as a string
 	 */
 	public String getHistory() {
-		return "";
+		history += " = " + total;
+		return history;
 	}
 }
